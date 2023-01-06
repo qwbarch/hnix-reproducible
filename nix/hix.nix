@@ -1,16 +1,9 @@
 {pkgs, ...}: {
   # name = "project-name";
-  compiler-nix-name = "ghc8107"; # Version of GHC to use
-
-  crossPlatforms = p: pkgs.lib.optionals pkgs.stdenv.hostPlatform.isx86_64 ([
-    p.mingwW64
-    p.ghcjs
-  ] ++ pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-    p.musl64
-  ]);
+  compiler-nix-name = "ghc925"; # Version of GHC to use
 
   # Tools to include in the development shell
   shell.tools.cabal = "latest";
   # shell.tools.hlint = "latest";
-  # shell.tools.haskell-language-server = "latest";
+  shell.tools.haskell-language-server = "latest";
 }
